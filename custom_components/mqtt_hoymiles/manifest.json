@@ -1,0 +1,19 @@
+{
+  "domain": "mqtt_hoymiles",
+  "name": "MQTT Hoymiles",
+  "codeowners": [
+    "@wasilukm"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "mqtt"
+  ],
+  "documentation": "https://github.com/wasilukm/hoymiles-mqtt-integration",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/wasilukm/hoymiles-mqtt-integration/issues",
+  "requirements": [
+    "hoymiles-mqtt==0.11.0"
+  ],
+  "version": "0.1.0"
+}

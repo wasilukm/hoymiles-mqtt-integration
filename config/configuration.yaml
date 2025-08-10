@@ -9,4 +9,4 @@ homeassistant:
 logger:
   default: info
   logs:
-    custom_components.hoymiles_mqtt_ha_integration: debug
+    custom_components.mqtt_hoymiles: debug

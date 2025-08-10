@@ -1,5 +1,5 @@
 {
-    "name": "hoymiles-mqtt HA integration",
-    "homeassistant": "2025.2.4",
+    "name": "MQTT Hoymiles",
+    "homeassistant": "2025.9.0",
     "hacs": "2.0.5"
 }

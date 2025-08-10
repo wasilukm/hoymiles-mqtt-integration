@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MQTT Hoymiles integration",
+        "description": "If you need help with the configuration have a look here: https://github.com/wasilukm/hoymiles-mqtt-integration",
+        "data": {
+          "--dtu-host": "DTU Address",
+          "--dtu-port": "DTU Port Number",
+          "--mqtt-broker": "MQTT Broker Address",
+          "--mqtt-port": "MQTT Broker Port Number",
+          "--mqtt-user": "MQTT User Name",
+          "--mqtt-password": "MQTT Password",
+          "--mqtt-tls": "MQTT TLS connection",
+          "--mqtt-tls-insecure": "Allow TLS insecure connection (only relevant when enabled the above TLS connection)"
+        }
+      }
+    },
+    "error": {
+      "dtu_connection": "DTU address/port is wrong.",
+      "mqtt_connection": "MQTT configuration is wrong."
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "--query-period": "How often (in seconds) DTU shall be queried",
+          "--mi-entities": "Inverter entities that will be sent to MQTT",
+          "--port-entities": "Port entities (in fact PV panel entities) that will be sent to MQTT",
+          "--expire-after": "Number of seconds after which DTU or inverter entities expire",
+          "--comm-timeout": "Modbus request timeout",
+          "--comm-retries": "Modbus max number of retries per request",
+          "--comm-reconnect-delay": "Modbus minimum delay in seconds.milliseconds before reconnecting",
+          "--comm-reconnect-delay-max": "Modbus maximum delay in seconds.milliseconds before reconnecting"
+        }
+      }
+    }
+  }
+}
