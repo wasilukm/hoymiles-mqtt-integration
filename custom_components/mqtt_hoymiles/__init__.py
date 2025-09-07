@@ -31,7 +31,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         _LOGGER.info(STARTUP_MESSAGE)
 
     params = dict(entry.data)
-    params[LOG_LEVEL_OPTION] = logging.getLevelName(_LOGGER.level)
+    log_level = logging.getLevelName(_LOGGER.level)
+    if log_level != "NOTSET":
+        params[LOG_LEVEL_OPTION] = log_level
     params[LOG_TO_CONSOLE_OPTION] = NO_CONFIG_VALUE
     params.update(dict(entry.options))
 
