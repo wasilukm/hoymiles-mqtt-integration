@@ -11,7 +11,7 @@ and many more.
 
 Connection to S-Miles Cloud is not required; the whole communication is local through ModbusTCP protocol.
 
-This integration is a wrapper over https://github.com/wasilukm/hoymiles-mqtt tool for those who don't want or can't run the tool in isolation from Home Assistant. Therefore, the integration doesn't need any extra configuration except copying the configuration from the tool. The integration creates two types of devices:
+This integration is a wrapper over https://github.com/wasilukm/hoymiles-mqtt tool for those who don't want or can't run the tool in isolation from Home Assistant. Therefore, the integration doesn't provide any entities or devices directly. Once the integration is properly configured, all devices (inverters and DTU) are visible under `MQTT` integration as the following devices:
 - `DTU_<serial_number>` - DTU device
 - `inv_<serial_number>` - inverter instances
 
