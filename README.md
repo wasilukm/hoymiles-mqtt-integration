@@ -11,7 +11,7 @@ and many more.
 
 Connection to S-Miles Cloud is not required; the whole communication is local through ModbusTCP protocol.
 
-This integration is a wrapper over https://github.com/wasilukm/hoymiles-mqtt tool for those who don't want or can't run the tool in isolation from Home Assistant. Therefore, the integration doesn't provide any entities or devices directly. Once the integration is properly configured, all devices (inverters and DTU) are visible under `MQTT` integration. They are named:
+This integration is a wrapper over https://github.com/wasilukm/hoymiles-mqtt tool for those who don't want or can't run the tool in isolation from Home Assistant. Therefore, the integration doesn't provide any entities or devices directly. Once the integration is properly configured, all devices (inverters and DTU) are visible under `MQTT` integration as the following devices:
 - `DTU_<serial_number>` - DTU device
 - `inv_<serial_number>` - inverter instances
 
@@ -26,3 +26,23 @@ Migration between standalone `hoymiles-mqtt` and the integration is transparent.
 - DTUs' Ethernet port connected to a network accesible by Home Assistant
 - DTU has assigned IP address by DHCP server. IP address shall be reserved for the device
 - Enabled MQTT integration and running MQTT broker, see https://www.home-assistant.io/integrations/mqtt/
+
+# Installation
+
+## Via HACS (recommended)
+
+1. Add the repository as a Custom Repository in HACS, see https://www.hacs.xyz/docs/faq/custom_repositories/
+2. In HACS search for "MQTT Hoymiles" integration
+3. Download the integration
+4. Restart Home Assistant
+5. Go to `Settings/Devices & services`
+6. Press `Add integration` and install `MQTT Hoymiles`
+7. Provide the required configuration
+
+## Manually
+1. Using the tool of choice, open your HA configuration's folder (where you find `configuration.yaml`). If you do not have `custom_components` folder, create it.
+2. From the repository copy the whole content of `custom_components` to `custom_components` folder from the previous point
+3. Restart Home Assistant
+4. Go to `Settings/Devices & services`
+5. Press `Add integration` and install `MQTT Hoymiles`
+6. Provide the required configuration
