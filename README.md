@@ -26,3 +26,23 @@ Migration between standalone `hoymiles-mqtt` and the integration is transparent.
 - DTUs' Ethernet port connected to a network accesible by Home Assistant
 - DTU has assigned IP address by DHCP server. IP address shall be reserved for the device
 - Enabled MQTT integration and running MQTT broker, see https://www.home-assistant.io/integrations/mqtt/
+
+# Installation
+
+## Via HACS (recommended)
+
+1. Add the repository as a Custom Repository in HASC, see https://www.hacs.xyz/docs/faq/custom_repositories/
+2. In HASC search for "MQTT Hoymiles" integration
+3. Download the integration
+4. Restart Home Assistant
+5. Go to `Settings/Devices & services`
+6. Press `Add integration` and install `MQTT Hoymiles`
+7. Provide the required configuration
+
+## Manually
+1. Using the tool of choice, open your HA configuration's folder (where you find `configuration.yaml`). If you do not have `custom_components` folder, create it.
+2. From the repository copy the whole content of `custom_components` to `custom_components` folder from the previous point
+3. Restart Home Assistant
+4. Go to `Settings/Devices & services`
+5. Press `Add integration` and install `MQTT Hoymiles`
+6. Provide the required configuration
