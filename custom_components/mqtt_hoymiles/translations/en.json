@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "MQTT Hoymiles integration",
-        "description": "If you need help with the configuration have a look here: https://github.com/wasilukm/hoymiles-mqtt-integration",
+        "description": "Home Assistant integration for Hoymiles Gateway DTU-Pro and DTU-Pro S devices",
         "data": {
           "--dtu-host": "DTU Address",
           "--dtu-port": "DTU Port Number",
@@ -12,7 +12,7 @@
           "--mqtt-user": "MQTT User Name",
           "--mqtt-password": "MQTT Password",
           "--mqtt-tls": "MQTT TLS connection",
-          "--mqtt-tls-insecure": "Allow TLS insecure connection (only relevant when enabled the above TLS connection)"
+          "--mqtt-tls-insecure": "Allow TLS insecure connection (only relevant with --mqtt-tls)"
         }
       }
     },
