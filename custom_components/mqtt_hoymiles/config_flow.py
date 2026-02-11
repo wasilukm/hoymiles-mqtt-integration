@@ -61,7 +61,7 @@ class HoymilesMqttHaIntegrationFlowHandler(config_entries.ConfigFlow, domain=DOM
         config_entry: config_entries.ConfigEntry,
     ) -> config_entries.OptionsFlow:
         """Get the options flow for this handler."""
-        return HoymilesMqttHaIntegrationOptionsFlowHandler(config_entry)
+        return HoymilesMqttHaIntegrationOptionsFlowHandler()
 
     async def _show_config_form(self) -> config_entries.ConfigFlowResult:
         """Show the configuration form to edit location data."""
@@ -113,15 +113,17 @@ OPTIONS_SCHEMA = vol.Schema(
 class HoymilesMqttHaIntegrationOptionsFlowHandler(config_entries.OptionsFlow):
     """Config flow options handler for the integration."""
 
-    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
+    def __init__(self) -> None:
         """Initialize HACS options flow."""
-        self.config_entry = config_entry
-        self.options = dict(config_entry.options)
+        self.options: dict[str, Any] = {}
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
     ) -> config_entries.ConfigFlowResult:
         """Manage the options."""
+        if not self.options:
+            self.options = dict(self.config_entry.options)
+
         if user_input is not None:
             self.options.update(user_input)
             return await self._update_options()
